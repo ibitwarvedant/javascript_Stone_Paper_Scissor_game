@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone paper scissor</title>
+</head>
+<body>
+    <script>
+        let round = prompt("enter how many rounds you want to play")
+        console.log("there will be " + round + " rounds")
+        let arr_user = []
+        let arr_comp = []
+        const obj=
+        {
+            "st": "Stone",
+            "pa": "Paper",
+            "sc": "Scissor"
+        }
+        const arr = ["Stone", "Paper", "Scissor"]
+        for (let i = 0; i < round; i++) {
+            let choice = prompt("enter st for stone, pa for paper and sc for scissor")
+            let random_number = Math.floor(Math.random() * 3)
+            let random_choice = (arr[random_number])
+            let entered_choice = obj[choice];
+            document.write(`round ${i + 1}: ` + "you: " + entered_choice + "  ")
+            document.write("computer:    " + random_choice + "<br>")
+            if (random_choice == "Stone" && entered_choice == "Paper") 
+            {
+                alert("you won!")
+                console.log("you won!")
+                arr_user.push(entered_choice)
+            }
+            else if (random_choice == "Stone" && entered_choice == "Scissor") 
+            {
+                alert(" you lost!")
+                console.log("you lost")
+                arr_comp.push(random_choice)
+            }
+            else if (random_choice == "Stone" && entered_choice == "Stone") 
+            {
+                alert(" tied")
+                console.log("tied")
+            }
+            else if (random_choice == "Paper" && entered_choice == "Scissor") 
+            {
+                alert(" you won!")
+                console.log("you won!")
+                arr_user.push(entered_choice)
+            }
+            else if (random_choice == "Paper" && entered_choice == "Stone") 
+            {
+                alert(" you lost!")
+                console.log(" you lost!")
+                arr_comp.push(random_choice)
+            }
+            else if (random_choice == "Paper" && entered_choice == "Paper") 
+            {
+                alert(" tied")
+                console.log("tied")
+            }
+            else if (random_choice == "Scissor" && entered_choice == "Stone") 
+            {
+                alert(" you won!")
+                console.log("you won!")
+                arr_user.push(entered_choice)
+            }
+            else if (random_choice == "Scissor" && entered_choice == "Paper") 
+            {
+                alert(" you lost!")
+                console.log("you lost!")
+                arr_comp.push(random_choice)
+            }
+            else if (random_choice == "Scissor" && entered_choice == "Scissor") 
+            {
+                alert(" tied")
+                console.log("tied")
+            }
+            else {
+                alert("enter valid input")
+            }
+        }
+        let user_len = (arr_user.length)
+        let comp_len = (arr_comp.length)
+        if (comp_len<user_len) 
+        {
+            document.write("<br>Congratulations!! you won the tournament")
+            document.write(`<br> you won by ${user_len}-${comp_len}`)
+            console.log(`<br> you won by ${user_len}-${comp_len}`)
+        }
+        else if (user_len < comp_len) 
+        {
+            document.write("<br>Bad luck!! you lost the tourament")
+            document.write(`<br> you lost by ${user_len}-${comp_len}`)
+            console.log(` you lost by ${user_len}-${comp_len}`)
+        }
+        else 
+        {
+            document.write("<br>tournament tied")
+            console.log(`<br> tournamnet tied ${user_len}-${comp_len}`)
+        }
+    </script>
+</body>
+</html>
